@@ -33,14 +33,14 @@
 
 1. Clone the repository:
 ```bash
-git clone <repository-url>
+git clone https://github.com/Wazanyirenda/library-api.git
 cd library-api
 ```
 
 2. Create and activate a virtual environment:
 ```bash
 
-python -m venv venv
+python -m venv [your-env-name]
 venv\Scripts\activate
 
 3. Install dependencies:

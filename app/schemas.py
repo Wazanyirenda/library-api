@@ -1,4 +1,4 @@
-from pydantic import BaseModel, Field, EmailStr, field_validator
+from pydantic import BaseModel, Field, field_validator
 from datetime import datetime, date
 from typing import Optional
 
@@ -38,7 +38,7 @@ class Book(BookBase):
 
 class MemberBase(BaseModel):
     name: str = Field(..., min_length=1, max_length=100)
-    email: EmailStr
+    email: str = Field(..., min_length=3, max_length=100)
     phone: Optional[str] = Field(None, max_length=20)
     address: Optional[str] = Field(None, max_length=200)
     status: str = Field("active")
@@ -50,7 +50,7 @@ class MemberCreate(MemberBase):
 
 class MemberUpdate(BaseModel):
     name: Optional[str] = Field(None, min_length=1, max_length=100)
-    email: Optional[EmailStr] = None
+    email: Optional[str] = Field(None, min_length=3, max_length=100)
     phone: Optional[str] = Field(None, max_length=20)
     address: Optional[str] = Field(None, max_length=200)
     status: Optional[str] = None

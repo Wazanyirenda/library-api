@@ -7,7 +7,7 @@ from app.routers import books, members, borrowings, search, stats
 Base.metadata.create_all(bind=engine)
 
 app = FastAPI(
-    title="Library Management API",
+    title="book API",
     description="RESTful API for managing books, members, and borrowing records",
     version="1.0.0"
 )
